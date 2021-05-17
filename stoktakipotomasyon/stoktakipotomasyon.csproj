@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF58588F-8A2B-4C1D-8453-3BF15B1BB202}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>stoktakipotomasyon</RootNamespace>
+    <AssemblyName>stoktakipotomasyon</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1" />
+    <Reference Include="DevExpress.Printing.v15.1.Core" />
+    <Reference Include="DevExpress.Utils.v15.1" />
+    <Reference Include="DevExpress.XtraBars.v15.1" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v15.1" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fonksiyonlar\Database.cs">
+      <DependentUpon>Database.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Fonksiyonlar\Database.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Fonksiyonlar\Formlar.cs" />
+    <Compile Include="AnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaForm.Designer.cs">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonksiyonlar\Mesajlar.cs" />
+    <Compile Include="Fonksiyonlar\Numara.cs" />
+    <Compile Include="Fonksiyonlar\Resimleme.cs" />
+    <Compile Include="Modul_Banka\frmbankaaciliskarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankaaciliskarti.Designer.cs">
+      <DependentUpon>frmbankaaciliskarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankahareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankahareketleri.Designer.cs">
+      <DependentUpon>frmbankahareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankaislemi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankaislemi.Designer.cs">
+      <DependentUpon>frmbankaislemi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Banka\frmparatransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Banka\frmparatransfer.Designer.cs">
+      <DependentUpon>frmparatransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankaliste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Banka\frmbankaliste.Designer.cs">
+      <DependentUpon>frmbankaliste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcariaciliskarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcariaciliskarti.Designer.cs">
+      <DependentUpon>frmcariaciliskarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcarigruplari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcarigruplari.Designer.cs">
+      <DependentUpon>frmcarigruplari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcarihareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcarihareketleri.Designer.cs">
+      <DependentUpon>frmcarihareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcarilistesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Cari\frmcarilistesi.Designer.cs">
+      <DependentUpon>frmcarilistesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Fatura\frmfaturalistesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Fatura\frmfaturalistesi.Designer.cs">
+      <DependentUpon>frmfaturalistesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Fatura\frmsatisfaturasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Fatura\frmsatisfaturasi.Designer.cs">
+      <DependentUpon>frmsatisfaturasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasaaciliskarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasaaciliskarti.Designer.cs">
+      <DependentUpon>frmkasaaciliskarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasadevirislem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasadevirislem.Designer.cs">
+      <DependentUpon>frmkasadevirislem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasahareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasahareketleri.Designer.cs">
+      <DependentUpon>frmkasahareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasalistesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasalistesi.Designer.cs">
+      <DependentUpon>frmkasalistesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasatahsilatodeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Kasa\frmkasatahsilatodeme.Designer.cs">
+      <DependentUpon>frmkasatahsilatodeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstokgruplari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstokgruplari.Designer.cs">
+      <DependentUpon>frmstokgruplari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstokhareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstokhareketleri.Designer.cs">
+      <DependentUpon>frmstokhareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstokkarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstokkarti.Designer.cs">
+      <DependentUpon>frmstokkarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstoklistesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul_Stok\frmstoklistesi.Designer.cs">
+      <DependentUpon>frmstoklistesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Modul_Fatura\frmfaturalistesi.resx">
+      <DependentUpon>frmfaturalistesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Fatura\frmsatisfaturasi.resx">
+      <DependentUpon>frmsatisfaturasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Kasa\frmkasaaciliskarti.resx">
+      <DependentUpon>frmkasaaciliskarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Kasa\frmkasadevirislem.resx">
+      <DependentUpon>frmkasadevirislem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Kasa\frmkasahareketleri.resx">
+      <DependentUpon>frmkasahareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Kasa\frmkasalistesi.resx">
+      <DependentUpon>frmkasalistesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Kasa\frmkasatahsilatodeme.resx">
+      <DependentUpon>frmkasatahsilatodeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Fonksiyonlar\Database.dbml.layout">
+      <DependentUpon>Database.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="AnaForm.resx">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Banka\frmbankaaciliskarti.resx">
+      <DependentUpon>frmbankaaciliskarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Banka\frmbankahareketleri.resx">
+      <DependentUpon>frmbankahareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Banka\frmbankaislemi.resx">
+      <DependentUpon>frmbankaislemi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Banka\frmbankaliste.resx">
+      <DependentUpon>frmbankaliste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Banka\frmparatransfer.resx">
+      <DependentUpon>frmparatransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Cari\frmcariaciliskarti.resx">
+      <DependentUpon>frmcariaciliskarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Cari\frmcarigruplari.resx">
+      <DependentUpon>frmcarigruplari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Cari\frmcarilistesi.resx">
+      <DependentUpon>frmcarilistesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Stok\frmstokgruplari.resx">
+      <DependentUpon>frmstokgruplari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Stok\frmstokhareketleri.resx">
+      <DependentUpon>frmstokhareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Stok\frmstokkarti.resx">
+      <DependentUpon>frmstokkarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modul_Stok\frmstoklistesi.resx">
+      <DependentUpon>frmstoklistesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Fonksiyonlar\Database.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Database.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\guncelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Ara32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Hareket16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Hareket32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Havale16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Havale32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Islem16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Islem32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Kartı16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Kartı32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Liste16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka_Liste32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Banka32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\BankaEFT16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\BankaEFT32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Grup16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Grup32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Hareket16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Hareket32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Kart16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Kart32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Liste16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari_Liste32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cari32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Bankaya16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Bankaya32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Bordo32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Bordro16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_BordroLst16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_BordroLst32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Cariye16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Cariye32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Kendi16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Kendi32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_KendiLst16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_KendiLst32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Musteri16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_Musteri32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_MusteriLst16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek_MusteriLst32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Cek32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Chrome32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Excel32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_Alis16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_Alis32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_AlisIade16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_AlisIade32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_Satis16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_Satis32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_SatisIade16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura_SatisIade32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Fatura32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\FireFox32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\HesapMakinesi32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kapat24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Devir16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Devir32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Hareket16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Hareket32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Karti16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Karti32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Liste16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Liste32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Odeme16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Odeme32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Tahsilat16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa_Tahsilat32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kasa32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Kaydet24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Menu32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Program_Exit16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Program_Exit32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Bankaya16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Bankaya32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Bordro16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Bordro32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_BordroLst16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_BordroLst32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Cariye16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Cariye32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Kendi16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Kendi32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_KendiLst16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_KendiLst32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Musteri16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_Musteri32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_MusteriLst16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet_MusteriLst32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Senet32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Sil24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Sil32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Bekleyen16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Bekleyen32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Iptal16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Iptal32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Onaylanan16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Onaylanan32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Sevk16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Siparis_Sevk32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Grup16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Grup32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Hareket16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Hareket32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Kartı16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Kartı32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Liste16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok_Liste32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Stok32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Word32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\Yeni24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\iconlar\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uu_logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
